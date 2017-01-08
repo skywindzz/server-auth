@@ -25,7 +25,7 @@ exports.signup = function(req, res, next) {
     user.save(function(err) {
       if(err) { return next(err); }
       //Respond to request indicating the user was created
-      res.json({ success: true });
+      res.json({ success: user.password });
     });
   });
 }
