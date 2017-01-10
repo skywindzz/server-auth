@@ -6,6 +6,7 @@ function tokenForUser(user) {
   const timestamp = new Date().getTime();
   return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);  //sub(subject) is jwt prop, iat(issued at time)
 }
+
 exports.signup = function(req, res, next) {
   const email = req.body.email;
   const password = req.body.password;
